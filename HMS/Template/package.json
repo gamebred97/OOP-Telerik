@@ -1,0 +1,16 @@
+{
+  "name": "hms",
+  "version": "1.0.0",
+  "main": "src/main.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/main.js",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.20.0",
+    "eslint-config-google": "^0.14.0"
+  },
+  "author": "Telerik Academy"
+}
