@@ -53,11 +53,4 @@ export class Shampoo extends Product {
   additionalInfo() {
     return `#Milliliters: ${this.#milliliters}\n#Usage: ${this.#usage}`
   }
-
-  print(){
-    return `#${super.name} ${super.brand}\n`+
-  `#Price: $${super.price}\n`+
-  `#Gender: ${Gender[super.gender]}\n`+
-  `${this.additionalInfo()}\n===`
-  }
 }

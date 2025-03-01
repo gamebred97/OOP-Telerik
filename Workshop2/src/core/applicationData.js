@@ -6,7 +6,8 @@ import { Shampoo } from "../models/shampoo.js";
 import { Toothpaste } from "../models/toothpaste.js";
 import { Gender } from "../models/gender.js";
 import { Usage } from "../models/usage.js"
-
+import { Cream } from "../models/cream.js";
+import { scent } from "../models/scent.js";
 export class ApplicationData {
     #products = [];
     #categories = []
@@ -94,7 +95,28 @@ export class ApplicationData {
         
     }
 
-    /**
+  
+
+
+     /**
+    * @param {string} name
+    * @param {string} brand
+    * @param {number} price
+    * @param {Gender} gender
+    * @param {scent} scent
+  
+    *
+    * @returns {Cream}
+    */
+
+     createCream(name, brand, price, gender, scent){
+        const cream = new Cream(name, brand, price, gender, scent);
+
+        this.#products.push(cream);
+     }
+
+     
+       /**
     * @param {string} name
     * @param {string} brand
     * @param {number} price
@@ -103,6 +125,7 @@ export class ApplicationData {
     *
     * @returns {Toothpaste}
     */
+
     createToothpaste(name, brand, price, gender, ingredients) {
        
             const products = new Toothpaste(name, brand, price, gender, ingredients);

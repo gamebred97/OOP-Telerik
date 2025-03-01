@@ -22,7 +22,7 @@ export class CreateToothpasteCommand {
     this.#appData.createToothpaste(toothpasteName, toothpasteBrand, toothpastePrice, toothpasteGender, toothpasteIngredients);
   
 
-    return `Toothpaste with name ${toothpasteName} was created!\n`
+    return `Toothpaste with name ${toothpasteName} was created!`
     }
 }
 

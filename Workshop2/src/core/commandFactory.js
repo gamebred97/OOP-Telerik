@@ -9,6 +9,8 @@ import { AddToShoppingCartCommand } from "../commands/addToShoppingCart.js";
 import { RemoveFromShoppingCartCommand } from "../commands/removeFromShoppingCart.js";
 import { TotalPriceCommand } from "../commands/totalPrice.js";
 import { ApplicationData } from "./applicationData.js";
+import { CreateCreamCommand } from "../commands/createCream.js";
+import { ShowShoppingCart } from "../commands/showShoppingcart.js";
 export class CommandFactory {
     
     #data;
@@ -30,6 +32,8 @@ export class CommandFactory {
                 return new CreateShampooCommand(commandArgs, this.#data);
             case 'createtoothpaste':
                 return new CreateToothpasteCommand(commandArgs, this.#data);
+            case 'createcream' :
+                return new CreateCreamCommand(commandArgs, this.#data);
             case 'showcategory':
                 return new ShowCategoryCommand(commandArgs, this.#data);
             case 'addtocategory':
@@ -42,6 +46,8 @@ export class CommandFactory {
                 return new RemoveFromShoppingCartCommand(commandArgs, this.#data);
             case 'totalprice':
                 return new TotalPriceCommand(this.#data);
+            case 'showshoppingcart':
+                return new ShowShoppingCart(this.#data);
             default:
                 throw new Error(`Invalid command name: ${commandName}!`);
         }

@@ -65,4 +65,13 @@ export class ShoppingCart {
   totalPrice() {
     return this.#productList.reduce((sum, p) => sum + Number(p.price), 0);
   }
+
+  print(){
+    let toPrint = '';
+    toPrint += '\n---------SHOPPING CART---------\n';
+    this.productList.forEach(item => toPrint += item.name + ', ' + item.price + '\n');
+    toPrint += '\nTotal price in shopping cart: ' + this.totalPrice();
+    toPrint += ('\n------------------------------\n');
+    return toPrint;
+  }
 }

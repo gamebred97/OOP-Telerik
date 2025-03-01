@@ -38,10 +38,4 @@ export class Toothpaste extends Product {
     return `Ingredients: ${this.#ingredients}`
   }
 
-  print(){
-    return `#${super.name} ${super.brand}\n`+
-  `#Price: $${super.price}\n`+
-  `#Gender: ${Gender[super.gender]}\n`+
-  `${this.additionalInfo()}\n===`
-  }
 }

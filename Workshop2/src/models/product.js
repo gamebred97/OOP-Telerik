@@ -20,34 +20,11 @@ export class Product {
   * @param {Gender} gender
   */
   constructor(name, brand, price, gender) {
-    if (!name) {
-      throw new Error("Invalid name!");
-    }
-
-    if (!brand) {
-      throw new Error("Invalid brand!");
-    }
-
-    if (name.length < Product.#minNameLength || name.length > Product.#maxNameLength) {
-      throw new Error(`Product name length must be between ${Product.#minNameLength} and ${Product.#maxNameLength}`);
-    }
-
-    if (brand.length < Product.#minBrandLength || brand.length > Product.#maxBrandLength) {
-      throw new Error(`Product brand length must be between ${Product.#minBrandLength} and ${Product.#maxBrandLength}`);
-    }
-
-    if (!Object.keys(Gender).some(key => Gender[key] === gender)) { // if (!Gender.hasOwnProperty(gender)) {
-      throw new Error(`Invalid gender type value ${gender}!`);
-    }
-
-    if (price < Product.#minPrice) {
-      throw new Error(`Product price must be greater than ${Product.#minPrice}`);
-    }
-
-    this.#name = name;
-    this.#brand = brand;
-    this.#price = price;
-    this.#gender = gender;
+    
+    this.#name = this.validateString(name,Product.#minNameLength , Product.#maxNameLength);
+    this.#brand = this.validateString(brand, Product.#minBrandLength, Product.#maxBrandLength);
+    this.#price = this.validatePrice(price,Product.#minPrice);
+    this.#gender = this.validateGender(gender);
   }
 
   /**
@@ -77,6 +54,34 @@ export class Product {
   get gender() {
     return this.#gender;
   }
+
+
+  validateString(value, min ,max){
+    if (!value) {
+        throw new Error("Invalid input!");
+      }
+
+      if (value.length < min || value.length > max) {
+        throw new Error(`Length must be between ${min} and ${max}`);
+      }
+      return value;
+  }
+
+  validateGender(value){
+    if(!Object.values(Gender).includes(value)) throw new Error('Invalid gender')
+        
+      return value;
+  }
+
+  validatePrice(value, min){
+    if (value < min) {
+      throw new Error(`Product price must be greater than ${min}`);
+    }
+    return value;
+
+  }
+
+
 
   /**
   * @returns {string}
