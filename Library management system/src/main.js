@@ -6,7 +6,7 @@ import { DigitalLibrary } from "./models/digitalLibrary.js";
 
 console.log('--------NEW--------');
 const myLibrary = new Library("City Library");
-console.log(myLibrary);
+console.log(myLibrary.name);
 console.log('--------NEW--------');
 
 const book1 = new Book("Harry Potter", "J.K. Rowling", "123456", 3);
