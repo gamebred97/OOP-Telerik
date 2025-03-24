@@ -46,12 +46,15 @@ export default class Stack {
     }
 }
 
-// const stack = new Stack();
-// stack.push(1)
-// //console.log(stack.getTop());
-// stack.push(2)
-// //console.log(stack.getTop());
-// stack.push(3)
-// //console.log(stack.getTop());
+const stack = new Stack();
+// console.log(stack);
+
+stack.push(1)
+//console.log(stack.getTop());
+stack.push(2)
+//console.log(stack.getTop());
+stack.push(3)
+console.log(stack.getTop());
+
 // stack.pop()
 // console.log(stack.peek());
