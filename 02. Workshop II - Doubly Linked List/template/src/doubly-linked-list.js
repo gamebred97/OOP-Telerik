@@ -1,20 +1,10 @@
 import LinkedListNode from "./linked-list-node.js";
 
-// constructor(value) {
-//     this.value = value;
-//     this.next = null;
-//     this.prev = null;
-// }
-
 export default class DoublyLinkedList {
   head = null;
   tail = null;
   #count = 0;
 
-  // constructor() {
-  //   this.head = null;
-  //   this.tail = null;
-  // }
 
   addFirst(value) {
     const node = new LinkedListNode(value);
@@ -139,12 +129,23 @@ export default class DoublyLinkedList {
   }
 }
 
-// const test = new DoublyLinkedList();
-// test.addLast(1);
-// test.addLast(2);
+const test = new DoublyLinkedList();
+test.addLast(1);
+test.addLast(2);
+test.addLast(3);
+test.addLast(4);
+test.addLast(5);
 
 
-// console.log(test.tail);
+console.log(test.values());
+
+const el = test.find(3)
+
+if (el){
+  test.insertAfter(el , 2.5)
+}
+
+console.log(test.values());
 
 // console.log(test.head.next.prev === test.head)
 // console.log(test.tail.prev.next === test.tail);
